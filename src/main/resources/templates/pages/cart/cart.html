@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/minireset.css" />
+    <link rel="stylesheet" href="../../static/css/common.css" />
+    <link rel="stylesheet" href="../../static/css/cart.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="w">
+            <div class="header-left">
+                <a href="../../index.html">
+                    <img src="../../static/img/logo.gif" alt="" /></a>
+                <h1>Cart</h1>
+            </div>
+            <div class="header-right">
+                <h3>Welcome<span>Jie</span>to JACEDU</h3>
+                <div class="order"><a href="../order/order.html">My Order</a></div>
+                <div class="destory"><a href="../../index.html">Log out</a></div>
+                <div class="gohome">
+                    <a href="../../index.html">Return</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="w">
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Course Name</th>
+
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="order:${orders}">
+                        <td>
+                            <img src="../../static/uploads/huozhe.jpg" alt="" />
+                        </td>
+                        <td th:text="${order.name}">Spring Boot</td>
+                        <td>
+                            <span class="count">-</span>
+                            <input class="count-num" type="text" value="1" />
+                            <span class="count">+</span>
+                        </td>
+                        <td>36.8</td>
+                        <td>36.8</td>
+                        <td><a href="">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../../static/uploads/huozhe.jpg" alt="" />
+                        </td>
+                        <td>Spring Boot</td>
+                        <td>
+                            <span class="count">-</span>
+                            <input class="count-num" type="text" value="1" />
+                            <span class="count">+</span>
+                        </td>
+                        <td>36.8</td>
+                        <td>36.8</td>
+                        <td><a href="">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../../static/uploads/huozhe.jpg" alt="" />
+                        </td>
+                        <td>Spring Boot</td>
+                        <td>
+                            <span class="count">-</span>
+                            <input class="count-num" type="text" value="1" />
+                            <span class="count">+</span>
+                        </td>
+                        <td>36.8</td>
+                        <td>36.8</td>
+                        <td><a href="">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="footer">
+                <div class="footer-left">
+                    <a href="#" class="clear-cart">Clear Cart</a>
+                    <a href="#">Continual Shopping</a>
+                </div>
+                <div class="footer-right">
+                    <div>Total<span>3</span>Course</div>
+                    <div class="total-price">Total<span>99.9</span>Dolor</div>
+                    <a class="pay" href="checkout.html">Payment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="w">
+            <div class="top">
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="../../static/img/bottom1.png" alt="" />
+                            <span>All by Professor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../../static/img/bottom.png" alt="" />
+                            <span> Technologies in tune with industry needs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../../static/img/bottom2.png" alt="" />
+                            <span>Hands-on approach</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <dl>
+                    <dt>About JACEDU</dt>
+
+                </dl>
+                <dl>
+                    <dt>Resource Download</dt>
+
+
+                </dl>
+                <dl>
+                    <dt>Join Us</dt>
+
+
+                </dl>
+                <dl>
+                    <dt>Contact Us</dt>
+                    <!-- <dd>https://www.johnabbott.qc.ca/
+                      <dd> -->
+                </dl>
+            </div>
+        </div>
+        <div class="down">
+            JACEDU.Copyright ©2022
+        </div>
+    </div>
+</body>
+
+</html>

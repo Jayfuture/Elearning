@@ -1,0 +1,259 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>online learning index</title>
+    <link rel="stylesheet" href="./static/css/minireset.css" />
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/iconfont.css" />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="stylesheet" href="./static/css/swiper.min.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="topbar">
+            <div class="w">
+                <div class="topbar-left">
+                    <i>Deliever to:</i>
+                    <i><Montreal></i>
+                    <i class="iconfont icon-ai-arrow-down"></i>
+                </div>
+                <div class="topbar-right">
+                    <a href="./pages/user/login.html" class="login">login</a>
+                    <a href="./pages/user/regist.html" class="register">Regist</a>
+                    <a href="./pages/cart/cart.html" class="cart iconfont icon-gouwuche
+			">
+              Cart
+              <div class="cart-num">3</div>
+            </a>
+                    <a href="./pages/manager/book_manager.html" class="admin">Admin</a>
+                </div>
+                <!--          after log in-->
+                <!--          <div class="topbar-right">-->
+                <!--            <span>welcome<b>Jie</b></span>-->
+                <!--            <a href="#" class="register">Log Out</a>-->
+                <!--            <a-->
+                <!--                    href="pages/cart/cart.jsp"-->
+                <!--                    class="cart iconfont icon-gouwuche-->
+                <!--			">-->
+                <!--              Cart-->
+                <!--              <div class="cart-num">3</div>-->
+                <!--            </a>-->
+                <!--            <a href="./pages/manager/book_manager.html" class="admin">Admin</a>-->
+                <!--          </div>-->
+            </div>
+        </div>
+        <div class="header w">
+            <a href="#" class="header-logo"></a>
+            <div class="header-nav">
+                <ul>
+                    <li><a href="#">COMPUTER</a></li>
+                    <!-- <li><a href="#">BIOPHARMACEUTICAL</a></li> -->
+                    <li><a href="#">DENTAL</a></li>
+                    <li><a href="#">ENGINEERING</a></li>
+                    <li><a href="#">INFROMATION</a></li>
+                    <li><a href="#">THEATRE</a></li>
+                    <li><a href="#">BUSINESS</a></li>
+                </ul>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="How to learn Linux" />
+                <button class="iconfont icon-search"></button>
+            </div>
+        </div>
+        <div class="banner w clearfix">
+            <div class="banner-left">
+                <ul>
+                    <li>
+                        <a href="">
+                            <span>Pre-university</span>
+                            <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>Career</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>Certificate</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>CEGEP</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>Summer School</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>English Academic</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <span>International Programs</span>
+                <i class="iconfont icon-jiantou"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="banner-right">
+          <div class="swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="static/uploads/banner4.jpg" alt="">
+                <!-- <div class="banner-img"></div> -->
+              </li>
+              <li class="swiper-slide">
+                <img src="static/uploads/banner5.jpg" alt="">
+                <!-- <div class="banner-img"></div> -->
+              </li>
+              <li class="swiper-slide">
+                <img src="static/uploads/banner6.jpg" alt="">
+                <!-- <div class="banner-img"></div> -->
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+
+            <div class="swiper-button-next"></div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+      <div class="books-list ">
+        <div class="w">
+          <div class="list">
+            <div class="list-header">
+              <div class="title">Course list</div>
+              <div class="price-search">
+                <span>Price:</span>
+                <input type="text">
+                <span>-Dolar</span>
+                <input type="text">
+                <span>Dolar</span>
+                <button>Search</button>
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="list-item">
+                <img src="static/uploads/huozhe.jpg" alt="">
+                <br>
+                <p>Name:SpringBoot</p>
+                <p>Teacher:</p>
+                <p>Price:$66.6</p>
+              <button>Add to Cart</button>
+              </div>
+              <!-- <div href="" class="list-item">
+                <img src="./static/uploads/huranqiri.jpg" alt="">
+                <p>书名:活着</p>
+                <p>作者:余华</p>
+                <p>价格:￥66.6</p>
+                <p>销量:230</p>
+                <p>库存:1000</p>
+                <button>加入购物车</button>
+              </div>
+ -->
+
+            </div>
+            <div class="list-footer">
+                <div>First Page</div>
+                <div>Previous</div>
+                <ul><li class="active">1</li><li>2</li><li>3</li></ul>
+                <div>Next</div>
+                <div>Last Page</div>
+                <span>total 10 Pages</span>
+                <span>30 record</span>
+                <span>Go to</span>
+                <input type="text">
+                <span>Page</span>
+                <button>Confirm</button>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="bottom">
+                <div class="w">
+                    <div class="top">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="static/img/bottom1.png" alt="">
+                                    <span>All by Professor</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="static/img/bottom.png" alt="">
+                                    <span> Technologies in tune with industry needs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="static/img/bottom2.png" alt="">
+                                    <span>Hands-on approach</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <dl>
+                            <dt>About JACEDU</dt>
+
+                        </dl>
+                        <dl>
+                            <dt>Resource Download</dt>
+
+             
+                        </dl>
+                        <dl>
+                            <dt>Join Us</dt>
+
+              
+                        </dl>
+                        <dl>
+                            <dt>Contact Us</dt>
+                            <!-- <dd>https://www.johnabbott.qc.ca/
+                                <dd> -->
+                        </dl>
+                    </div>
+                </div>
+                <div class="down">
+                    JACEDU.Copyright ©2022
+                </div>
+      </div>
+    </div>
+<script src="./static/script/swiper.min.js"></script>
+<script>
+          var swiper = new Swiper('.swiper-container', {
+            autoplay: true,
+            pagination: {
+              el: '.swiper-pagination',
+              dynamicBullets: true
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            }
+          })
+</script>
+</body>
+
+</html>

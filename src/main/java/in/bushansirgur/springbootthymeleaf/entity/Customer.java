@@ -1,0 +1,51 @@
+package in.bushansirgur.springbootthymeleaf.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name="tbl_customers")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long customer_id;
+
+    @Column(nullable = false, unique = true, length = 30)
+    private String customer_name;
+
+    @Column(nullable = false, unique = true, length = 30)
+    private String customer_email;
+
+    @Column(nullable = false, length = 100)
+    private String customer_address;
+
+    @Column(nullable = false, length = 30)
+    private String password;
+
+    @Transient
+    private String confirmPassword;
+
+        /*
+    　one to many   step 1　　　首先在一端添加：
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "one") //mappedBy = "one" 表示one是一对多管理的被维护端， 既当添加many时顺带添加一个one
+    private List<Many> manys;
+
+        　　然后再多端添加：
+
+@ManyToOne(fetch = FetchType.EAGER)
+@JoinColumn(name = "one_id") // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
+private One one;
+*/
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private List<Order> orders;
+}
