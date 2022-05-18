@@ -16,10 +16,10 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long order_id;
+    private Long orderId;
 
     @Column(nullable = false, unique = true)  // need to update
-    private Date create_date;
+    private Date createDate;
 
     @Column(nullable = false, unique = true)
     private int quantity;

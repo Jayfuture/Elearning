@@ -19,12 +19,12 @@ import java.util.List;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long course_id;
+    private Long courseId;
 
     @Column(nullable = false, unique = true, length = 30)
 //    @NotEmpty(message="Course name is mandatory.")
 //    @Size(min=1, max=30, message="Course name has to be 1-30 characters.")
-    private String course_name;
+    private String courseName;
 
     @Column(nullable = true, length = 4000)
 //    @NotEmpty(message="Content cannot be empty.")
@@ -32,7 +32,7 @@ public class Course {
     private String description;
 
     @Column(nullable = false) // need to update
-    private String img;
+    private byte[] img;
 
     @Column(nullable = false)
     private Double price;

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>尚硅谷会员注册页面</title>
+  <title>Register</title>
   <link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
   <link rel="stylesheet" href="../../static/css/register.css" />
   <style type="text/css">
@@ -24,53 +24,45 @@
 
     <div class="login_banner">
       <div class="register_form">
-        <h1>注册尚硅谷会员</h1>
+        <h1>Register</h1>
         <form action="regist_success.html">
           <div class="form-item">
             <div>
-              <label>用户名称:</label>
-              <input type="text" placeholder="请输入用户名" v-model="username" @blur="checkUsername"/>
+              <label>username:</label>
+              <input type="text" placeholder="username" v-model="username" @blur="checkUsername"/>
             </div>
             <span style="color: red">{{usernameErrorMessage}}</span>
           </div>
           <div class="form-item">
             <div>
-              <label>用户密码:</label>
-              <input type="password" placeholder="请输入密码" v-model="password"/>
+              <label>password:</label>
+              <input type="password" placeholder="password" v-model="password"/>
             </div>
             <span style="color: red">{{passwordErrorMessage}}</span>
           </div>
           <div class="form-item">
             <div>
-              <label>确认密码:</label>
-              <input type="password" placeholder="请输入确认密码" v-model="passwordConfirm"/>
+              <label>re-password:</label>
+              <input type="password" placeholder="re-password" v-model="passwordConfirm"/>
             </div>
             <span style="color: red">{{confirmErrorMessage}}</span>
           </div>
           <div class="form-item">
             <div>
-              <label>用户邮箱:</label>
-              <input type="text" placeholder="请输入邮箱" v-model="email"/>
+              <label>Email:</label>
+              <input type="text" placeholder="email" v-model="email"/>
             </div>
             <span style="color: red">{{emailErrorMessage}}</span>
           </div>
           <div class="form-item">
-            <div>
-              <label>验证码:</label>
-              <div class="verify">
-                <input type="text" placeholder="" v-model="code"/>
-                <img src="../../static/img/code.bmp" alt="" />
-              </div>
-            </div>
-            <!--<span>请输入正确的验证码</span>-->
           </div>
-          <button class="btn" @click="registerCheck">注册</button>
+          <button class="btn" @click="registerCheck">Sign up</button>
         </form>
       </div>
     </div>
     <div id="bottom">
     <span>
-      尚硅谷书城.Copyright &copy;2015
+      Copyright &copy;2022
     </span>
     </div>
   </div>

@@ -18,22 +18,22 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long teacher_id;
+    private Long teacherId;
 
     @Column(nullable = false, unique = true, length = 30)
-    private String name;       //private final ThreadLocal<String> name = new ThreadLocal<String>();
+    private String teacherName;       //private final ThreadLocal<String> name = new ThreadLocal<String>();
 
     @Column(nullable = false, unique = true, length = 30)
-    private String email;
+    private String teacherEmail;
 
     @Column(nullable = false, length = 100)
-    private String address;
+    private String teacherAddress;
 
     @Column
     private String income;
 
     @Column(nullable = false, length = 30)
-    private String password;
+    private String teacherPassword;
 
     @Transient
     private String confirmPassword;

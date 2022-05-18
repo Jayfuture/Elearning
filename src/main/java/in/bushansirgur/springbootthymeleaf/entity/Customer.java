@@ -18,19 +18,19 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long customer_id;
+    private Long customerId;
 
     @Column(nullable = false, unique = true, length = 30)
-    private String customer_name;
+    private String customerName;
 
     @Column(nullable = false, unique = true, length = 30)
-    private String customer_email;
+    private String customerEmail;
 
     @Column(nullable = false, length = 100)
-    private String customer_address;
+    private String customerAddress;
 
     @Column(nullable = false, length = 30)
-    private String password;
+    private String customerPassword;
 
     @Transient
     private String confirmPassword;
