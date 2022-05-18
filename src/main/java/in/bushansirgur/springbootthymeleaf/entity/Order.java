@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long orderId;
 
     @Column(nullable = false, unique = true)  // need to update

@@ -30,7 +30,7 @@ public class Course {
     @Size(min=10, max=8000, message="Description must be between 10-8000 characters long.")
     private String description;
 
-    @Column(nullable = false) // need to update
+    @Column(nullable = false) // need tdescriptiono update
     private byte[] img;
 
     @Column(nullable = false)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
     <div class="list">
       <div class="w">
         <div class="add">
-          <a href="book_edit.html">Add course</a>
+          <a  th:href="@{/addCourse}" >Add course</a>
         </div>
         <table>
           <thead>
@@ -38,33 +38,24 @@
               <th>Course name</th>
               <th>Price</th>
               <th>teacher</th>
-              <th>Qty</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Spring boot</td>
-              <td>
-                10.00
-              </td>
-              <td>Java</td>
-              <td>10</td>
-              <td>
-                <a href="book_edit.html">Update</a><a href="" class="del">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Bootstrap</td>
-              <td>
+
+            <tr th:each="course:${courses}">
+              <td th:text="${course.courseName}">Bootstrap</td>
+              <td th:text="${course.price}">
                 20.00
               </td>
-              <td>CSS</td>
-              <td>20</td>
+              <td th:text="${course.teacher}">CSS</td>
+
               <td>
-                <a href="book_edit.html">Update</a><a href="" class="del">Delete</a>
+                <a th:href="@{/showUpdateCourseForm(courseId=${course.courseId})}">Update</a>
+                <a th:href="@{/deleteCourse(courseId=${course.courseId})}" class="del">Delete</a>
               </td>
             </tr>
+
           </tbody>
         </table>
         <div class="footer">

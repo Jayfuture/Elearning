@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
           <h1>Edit Course</h1>
         </div>
         <div class="header-right">
-          <a href="./book_manager.html" class="order">course management</a>
+          <a href="courseManager.html" class="order">course management</a>
           <a href="./order_manager.html" class="destory">order management</a>
           <a href="../../index.html" class="gohome">Home</a>
         </div>
@@ -30,39 +30,43 @@
     </div>
     <div class="login_banner">
       <div class="register_form">
-        <form action="">
+        <form th:action="@{/saveCourse}" th:object="${course}" method="post">
           <div class="form-item">
             <div>
               <label>Name:</label>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" th:field="*{courseName}"/>
             </div>
-            <span class="errMess" style="visibility: visible;"
-              >Please type right name</span>
+            <span class="errMess" style="visibility: collapse;">Please type right name</span>
           </div>
           <div class="form-item">
             <div>
               <label>Price:</label>
-              <input type="number" placeholder="Price" />
+              <input type="number" placeholder="Price" th:field="*{price}"/>
             </div>
             <span class="errMess">Please type right numbers</span>
           </div>
           <div class="form-item">
             <div>
               <label>Teacher:</label>
-              <input type="text" placeholder="Teacher" />
+              <input type="text" placeholder="Teacher" th:field="*{teacher}" />
             </div>
             <span class="errMess">Please type right teacher</span>
           </div>
+
+
           <div class="form-item">
             <div>
               <label>Description:</label>
-              <input type="number" placeholder="Description" />
+              <input type="text" placeholder="Description" th:field="*{description}"/>
             </div>
             <span class="errMess">Please type right description</span>
           </div>
 
-          <button class="btn">Submit</button>
+          <button class="btn" type="submit">Save</button>
+          <input type="hidden" th:field="*{courseId}" />
         </form>
+        <hr>
+        <a th:href="@{/courseManager}">Back to list</a>
       </div>
     </div>
     <div class="bottom">
