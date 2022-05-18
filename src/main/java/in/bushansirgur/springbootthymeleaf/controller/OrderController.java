@@ -34,7 +34,7 @@ public class OrderController {
 //    }
 
 
-    @PostMapping("/saveOrder")
+    @PostMapping("/addOrder")
     public String saveOrder(@ModelAttribute Order order) {
         eRepo.save(order);
         return "redirect:/index";
