@@ -58,9 +58,9 @@ private One one;
 
     @ManyToMany
     @JoinTable(
-            name = "order_course",
-            joinColumns= {@JoinColumn(name = "orderId", referencedColumnName = "orderId")},
-            inverseJoinColumns= {@JoinColumn(name = "courseId", referencedColumnName = "courseId")}
+            name = "orderCourse",
+            joinColumns= {@JoinColumn(name = "oId", referencedColumnName = "orderId")},
+            inverseJoinColumns= {@JoinColumn(name = "cId", referencedColumnName = "courseId")}
             )
     private List<Course> courses;
 

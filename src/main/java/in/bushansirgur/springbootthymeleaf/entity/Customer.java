@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
-@Table(name="tbl_customers")
+@Table(name="tbl-customers")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
