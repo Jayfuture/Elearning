@@ -40,7 +40,7 @@ public class Order {
 private One one;
 */
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "customer_id")  // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
+    @JoinColumn(name = "customerId")  // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
     private Customer customer;
 
 
@@ -58,9 +58,9 @@ private One one;
 
     @ManyToMany
     @JoinTable(
-            name = "order_course",
-            joinColumns= {@JoinColumn(name = "o_id", referencedColumnName = "order_id")},
-            inverseJoinColumns= {@JoinColumn(name = "c_id", referencedColumnName = "course_id")}
+            name = "orderCourse",
+            joinColumns= {@JoinColumn(name = "oId", referencedColumnName = "orderId")},
+            inverseJoinColumns= {@JoinColumn(name = "cId", referencedColumnName = "courseId")}
             )
     private List<Course> courses;
 

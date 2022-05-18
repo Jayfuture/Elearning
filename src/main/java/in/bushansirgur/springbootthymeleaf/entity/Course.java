@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.List;
 //import javax.validation.constraints.NotEmpty;
@@ -41,7 +40,7 @@ public class Course {
 //    private String teacher;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "teacher_id") // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
+    @JoinColumn(name = "teacherId") // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
     private Teacher teacher;
 
 //
