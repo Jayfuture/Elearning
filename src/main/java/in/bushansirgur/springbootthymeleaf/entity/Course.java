@@ -7,8 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
-//import javax.validation.constraints.NotEmpty;
-//import javax.validation.constraints.Size;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="tbl_courses")
@@ -22,13 +22,13 @@ public class Course {
     private Long courseId;
 
     @Column(nullable = false, unique = true, length = 30)
-//    @NotEmpty(message="Course name is mandatory.")
-//    @Size(min=1, max=30, message="Course name has to be 1-30 characters.")
+    @NotEmpty(message="Course name is mandatory.")
+    @Size(min=1, max=30, message="Course name has to be 1-30 characters.")
     private String courseName;
 
     @Column(nullable = true, length = 4000)
-//    @NotEmpty(message="Content cannot be empty.")
-//    @Size(min=10, max=4000, message="Content must be between 10-4000 characters long.")
+    @NotEmpty(message="Content cannot be empty.")
+    @Size(min=10, max=8000, message="Description must be between 10-8000 characters long.")
     private String description;
 
     @Column(nullable = false) // need to update
@@ -41,7 +41,7 @@ public class Course {
 //    private String teacher;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "teacher_id") // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
+    @JoinColumn(name = "teacherId") // 在多端（从表的外键）添加外键字段指向一端（主表的主键）的主键字段
     private Teacher teacher;
 
 //

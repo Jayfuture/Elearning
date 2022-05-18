@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
@@ -21,18 +23,23 @@ public class Customer {
     private Long customerId;
 
     @Column(nullable = false, unique = true, length = 30)
+    @NotEmpty(message="Username is mandatory")
     private String customerName;
 
     @Column(nullable = false, unique = true, length = 30)
+    @NotEmpty (message="Email is mandatory")
+    @Email
     private String customerEmail;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = true, length = 100)
     private String customerAddress;
 
     @Column(nullable = false, length = 30)
+    @NotEmpty(message = "Password is mandatory")
     private String customerPassword;
 
     @Transient
+    @NotEmpty(message = "Password is mandatory")
     private String confirmPassword;
 
         /*
