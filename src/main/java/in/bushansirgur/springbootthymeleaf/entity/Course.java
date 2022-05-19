@@ -52,4 +52,10 @@ public class Course {
 @ManyToMany(mappedBy="courses")
 private List<Order> orders;
 
+    public Course(String courseName, byte[] img, Double price, Teacher teacher) {
+        this.courseName = courseName;
+        this.img = img;
+        this.price = price;
+        this.teacher = teacher;
+    }
 }

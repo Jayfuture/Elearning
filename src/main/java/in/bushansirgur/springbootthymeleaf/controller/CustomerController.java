@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 @Controller
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,7 +32,7 @@ public class CustomerController {
     }
 
     @PostMapping("/register")
-    String saveCustomer( @ModelAttribute Customer customer) {
+    String saveCustomer( @ModelAttribute Customer customer, Principal principal) {
         // Check if username exists
 //        if (customerService.usernameExists(customer.getCustomerName())) {
 //            result.addError(new FieldError("user", "username", "Username already exists, please choose another one"));
