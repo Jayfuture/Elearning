@@ -31,7 +31,7 @@
               </div>
               <div class="form">
                 <form action="login_success.html">
-                  <label>Username：</label>
+                  <label>username：</label>
                   <input
                           class="itxt"
                           type="text"
@@ -44,7 +44,7 @@
                   />
                   <br />
                   <br />
-                  <label>Password：</label>
+                  <label>password：</label>
                   <input
                           class="itxt"
                           type="password"
@@ -83,18 +83,13 @@
         },
         "methods":{
           loginCheck(){
-            //判断用户名和密码是否为空
             if (this.username != "") {
               if (this.password == ""){
-                //就要阻止表单提交
                 event.preventDefault()
-                //加入提示功能
                 this.errorMessage = "password can not be empty"
               }
             }else {
-              //就要阻止表单提交
               event.preventDefault()
-              //加入提示功能
               this.errorMessage = "Username can not be empty"
             }
           }

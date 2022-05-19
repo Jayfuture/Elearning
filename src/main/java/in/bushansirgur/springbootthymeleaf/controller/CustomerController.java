@@ -2,35 +2,24 @@ package in.bushansirgur.springbootthymeleaf.controller;
 
 import in.bushansirgur.springbootthymeleaf.dao.CustomerRepository;
 import in.bushansirgur.springbootthymeleaf.entity.Customer;
-import in.bushansirgur.springbootthymeleaf.service.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerController {
 
-    private CustomerService customerService;
-
     @Autowired
     CustomerRepository customerRepos;
 
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
 
     @GetMapping("/register")
     ModelAndView registerUser() {
@@ -82,10 +71,11 @@ public class CustomerController {
         return "pages/user/register-success";
     }
 
-    @GetMapping("/users")
-    public ModelAndView listUsers() {
-        ModelAndView mav = new ModelAndView("list-users");
-        mav.addObject("users", customerRepos.findAll());
+    @GetMapping("/login")
+    ModelAndView loginUser() {
+        ModelAndView mav = new ModelAndView("pages/user/login");
+        Customer newCustomer = new Customer();
+        mav.addObject("customer", newCustomer);
         return mav;
     }
 }
