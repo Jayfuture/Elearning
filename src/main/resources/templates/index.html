@@ -23,7 +23,7 @@
                 <!--                </div>-->
                 <div class="topbar-right">
                     <a href="./pages/user/login.html" class="login">login</a>
-                    <a href="./pages/user/regist.html" class="register">Regist</a>
+                    <a href="pages/user/register.html" class="register">Regist</a>
                     <a href="./pages/cart/cart.html" class="cart iconfont icon-gouwuche
 			">
               Cart
@@ -158,15 +158,15 @@
 
 
 
-            <div class="list-content">
-              <div class="list-item">
+            <div class="list-content" th:each="course:${courses}"  >
+              <div class="list-item" >
                 <img src="static/uploads/springboot.jpg" alt="">
                 <br>
-                <p>Name:SpringBoot</p>
-                <p>Teacher:</p>
-                <p>Price:$66.6</p>
+                <p>Name:<span th:text="${course.courseName}">SpringBoot</span></p>
+                <p>Teacher:<span th:text="${course.teacher}">John Smith</span></p>
+                <p>Price:<span th:text="${course.price}">$66.6</span></p>
                   <br>
-              <button><a th:href="@{/addOrder}" >Add to Cart</a></button>
+              <button><a th:href="@{/addOrder(courseId = ${course.courseId},customerId=${customer.customerId})}" >Add to Cart</a></button>   // courseId=${course.courseId}
               </div>
                 <div class="list-item">
                     <img src="static/uploads/springboot.jpg" alt="">

@@ -43,7 +43,7 @@ public abstract class CustomerService implements UserDetailsService {
 
     @Transactional
     public boolean usernameExists(String username){
-        Customer findUser = customerRepos.findByUsername(username);
+        Customer findUser = customerRepos.findByCustomerName(username);
         return (findUser != null);
     }
 

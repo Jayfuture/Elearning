@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <title>Register</title>
@@ -28,17 +28,17 @@
         <form action="regist_success.html">
           <div class="form-item">
             <div>
-              <label>username:</label>
+              <label>Customer name:</label>
               <input type="text" placeholder="username" v-model="username" @blur="checkUsername"/>
             </div>
-            <span style="color: red">{{usernameErrorMessage}}</span>
+            <span style="color: red" th:text="${customerName}" >{{usernameErrorMessage}}</span>
           </div>
           <div class="form-item">
             <div>
               <label>password:</label>
               <input type="password" placeholder="password" v-model="password"/>
             </div>
-            <span style="color: red">{{passwordErrorMessage}}</span>
+            <span style="color: red" th:text="${customerPassword}">{{passwordErrorMessage}}</span>
           </div>
           <div class="form-item">
             <div>
@@ -52,11 +52,11 @@
               <label>Email:</label>
               <input type="text" placeholder="email" v-model="email"/>
             </div>
-            <span style="color: red">{{emailErrorMessage}}</span>
+            <span style="color: red" th:text="${customerEmail}">{{emailErrorMessage}}</span>
           </div>
           <div class="form-item">
           </div>
-          <button class="btn" @click="registerCheck">Sign up</button>
+          <button class="btn" @click="registerCheck" th:href="@{/register( Customer customer)}" >Sign up</button>
         </form>
       </div>
     </div>

@@ -1,9 +1,7 @@
 package in.bushansirgur.springbootthymeleaf.service;
 
 import in.bushansirgur.springbootthymeleaf.dao.TeacherRepository;
-import in.bushansirgur.springbootthymeleaf.entity.CustomUserDetails;
 import in.bushansirgur.springbootthymeleaf.entity.Teacher;
-import in.bushansirgur.springbootthymeleaf.entity.TeacherUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,7 +23,8 @@ public abstract class TeacherService implements UserDetailsService {
         if (teacher == null) {
             throw new UsernameNotFoundException("User not found");
         }
-        return new TeacherUserDetails(teacher);
+//        return new TeacherUserDetails(teacher);
+        return  null;  // to be updated
     }
 
     @Transactional

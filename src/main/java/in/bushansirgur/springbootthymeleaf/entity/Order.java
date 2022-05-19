@@ -5,11 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="tbl_orders")
+@Table(name="tblOrders")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -64,4 +65,16 @@ private One one;
             )
     private List<Course> courses;
 
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setCreateDate(LocalDateTime now) {
+    }
+
+    public void setCourses(Course course) {
+    }
+
+    public void getCustomer(Customer customer) {
+    }
 }
